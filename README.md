@@ -1,3 +1,34 @@
+### Project Motivation: Casting Agency System  
+
+**1. Problem Identification**  
+The traditional process of managing movie projects and assigning actors involves numerous manual tasks, leading to inefficiencies, communication gaps, and delays. Keeping track of movie details, actor information, and role assignments can be cumbersome, especially when scaling up to manage multiple productions simultaneously.  
+
+**2. Opportunity Exploration**  
+With advancements in technology, there is a significant opportunity to develop a centralized, streamlined system to manage these processes efficiently. Automating the workflows for casting, actor management, and movie production can reduce errors, save time, and improve collaboration between roles such as Casting Assistants, Casting Directors, and Executive Producers.
+
+**3. Goals and Objectives**  
+The primary goal of this project is to build a **Casting Agency System** that allows for the efficient management of movies and actors. The system will provide the following key functionalities:  
+- **Movies:** Create, update, view, and delete movie records.  
+- **Actors:** Manage actor profiles, including adding, updating, viewing, and removing actors from the system.  
+- **Role-Based Access Control (RBAC):** Ensure that users have appropriate permissions based on their roles (Casting Assistant, Casting Director, Executive Producer).  
+
+**4. Benefits and Impact**  
+- **Efficiency:** Automates repetitive tasks such as data entry and retrieval, significantly reducing the time spent on administrative tasks.  
+- **Collaboration:** Facilitates better communication and workflow between different roles in the company.  
+- **Scalability:** Enables the agency to manage an increasing number of movies and actors without additional overhead.  
+- **Accuracy:** Minimizes human error through standardized processes and clear role permissions.  
+- **Security:** Ensures sensitive data is only accessible to users with appropriate permissions, safeguarding company assets.
+
+**5. Personal/Team Motivation**  
+As the **Executive Producer**, you are passionate about leveraging technology to simplify complex workflows. This system aligns with your vision of creating a cutting-edge production environment, ensuring that your team can focus more on creative tasks rather than administrative ones. By implementing this system, you aim to lead your company into a new era of digital efficiency and productivity.  
+
+**6. Implementation Strategy**  
+- **Endpoints:** RESTful API endpoints for managing movies and actors.  
+- **Role Definitions:** Implement RBAC to ensure each user role has the appropriate level of access and capabilities.  
+- **Testing:** Comprehensive tests to verify both successful and error-prone behavior of endpoints, as well as ensure proper RBAC enforcement.  
+
+This project will serve as a foundation for a scalable and efficient casting management system, ultimately helping the company achieve its production goals more effectively.
+
 ## Setting up the Backend
 
 ### Install Dependencies
@@ -269,5 +300,20 @@ createdb capstone_db_test
 psql capstone_db_test < capstone.psql
 python test_app.py
 ```
+##  Hosting instructions - Render
+On the New Postgres page:
+    Step 1: Enter a name for the new database service: postgres-deployment-example
+    Step 2: Select an instance type: Free
+    Step 3: Click Create Database button
+On the New Web Service page:
+   Step 1: Provide a name for the new database service: render-deployment-example
+   Step 2: Select an instance type: Free
+   Step 3: Enter the build command: pip install -r requirements.txt
+   Step 4: From the Postgres service (name: "postgres-deployment-example"), click the "Info" side navigation and copy the Internal Database URL from the Connections page.
+   Step 5: Create an environment variable with the key: DATABASE_URL and Database URL value copied from the Postgres service.
+   Add a second Environment variable with the key EXCITED and value true.
+
+
+After the Web Service is ready, you can open your Flask app on the browser by clicking the app URL under the title on the Web Service page.
 ## Endpoints
 https://render-deployment-example-udacity-jbhn.onrender.com
