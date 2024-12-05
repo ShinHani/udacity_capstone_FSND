@@ -8,7 +8,7 @@ from app import create_app
 
 
 class CastingAgencyTestCase(unittest.TestCase):
-    """This class represents the trivia test case"""
+    """This class represents the capstone test case"""
 
     def setUp(self):
         """Define test variables and initialize app."""

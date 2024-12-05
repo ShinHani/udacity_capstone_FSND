@@ -28,7 +28,7 @@ CREATE TABLE public.movies (
     id integer NOT NULL,
     title text NOT NULL,
     producer text,
-    genre text
+    genre text,
     release_date text
 );
 
@@ -41,8 +41,8 @@ ALTER TABLE public.movies OWNER TO postgres;
 CREATE TABLE public.actors (
     id integer NOT NULL,
     name text NOT NULL,
-    age integer NOT NULL
-    gender text NOT NULL,
+    age integer NOT NULL,
+    gender text NOT NULL
 );
 
 ALTER TABLE public.actors OWNER TO postgres;

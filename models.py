@@ -21,15 +21,15 @@ class Actor(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
+    age = db.Column(db.String, nullable=True)
     gender = db.Column(db.String, nullable=False)
-    bio = db.Column(db.String, nullable=True)
 
     def format(self):
         return {
             'id': self.id,
             'name': self.name,
-            'gender': self.gender,
-            'bio': self.bio
+            'age': self.age,
+            'gender': self.gender
         }
 
     def insert(self):
@@ -50,13 +50,15 @@ class Movie(db.Model):
     title = db.Column(db.String, nullable=False)
     producer = db.Column(db.String, nullable=True)
     genre = db.Column(db.String, nullable=True)
+    release_date = db.Column(db.String, nullable=True)
 
     def format(self):
         return {
             'id': self.id,
             'title': self.title,
             'producer': self.producer,
-            'genre': self.genre
+            'genre': self.genre,
+            'release_date': self.release_date
         }
 
     def insert(self):
