@@ -268,3 +268,6 @@ dropdb capstone_db_test
 createdb capstone_db_test
 psql capstone_db_test < capstone.psql
 python test_app.py
+```
+## Endpoints
+https://render-deployment-example-udacity-jbhn.onrender.com
