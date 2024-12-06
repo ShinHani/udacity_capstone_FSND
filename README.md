@@ -29,6 +29,24 @@ As the **Executive Producer**, you are passionate about leveraging technology to
 
 This project will serve as a foundation for a scalable and efficient casting management system, ultimately helping the company achieve its production goals more effectively.
 
+##  Hosting instructions - Render
+On the New Postgres page:
+    Step 1: Enter a name for the new database service: postgres-deployment-example
+    Step 2: Select an instance type: Free
+    Step 3: Click Create Database button
+On the New Web Service page:
+   Step 1: Provide a name for the new database service: render-deployment-example
+   Step 2: Select an instance type: Free
+   Step 3: Enter the build command: pip install -r requirements.txt
+   Step 4: From the Postgres service (name: "postgres-deployment-example"), click the "Info" side navigation and copy the Internal Database URL from the Connections page.
+   Step 5: Create an environment variable with the key: DATABASE_URL and Database URL value copied from the Postgres service.
+   Add a second Environment variable with the key EXCITED and value true.
+
+
+After the Web Service is ready, you can open your Flask app on the browser by clicking the app URL under the title on the Web Service page.
+## Endpoints
+https://render-deployment-example-udacity-jbhn.onrender.com
+
 ## Setting up the Backend
 
 ### Install Dependencies
@@ -300,20 +318,3 @@ createdb capstone_db_test
 psql capstone_db_test < capstone.psql
 python test_app.py
 ```
-##  Hosting instructions - Render
-On the New Postgres page:
-    Step 1: Enter a name for the new database service: postgres-deployment-example
-    Step 2: Select an instance type: Free
-    Step 3: Click Create Database button
-On the New Web Service page:
-   Step 1: Provide a name for the new database service: render-deployment-example
-   Step 2: Select an instance type: Free
-   Step 3: Enter the build command: pip install -r requirements.txt
-   Step 4: From the Postgres service (name: "postgres-deployment-example"), click the "Info" side navigation and copy the Internal Database URL from the Connections page.
-   Step 5: Create an environment variable with the key: DATABASE_URL and Database URL value copied from the Postgres service.
-   Add a second Environment variable with the key EXCITED and value true.
-
-
-After the Web Service is ready, you can open your Flask app on the browser by clicking the app URL under the title on the Web Service page.
-## Endpoints
-https://render-deployment-example-udacity-jbhn.onrender.com
